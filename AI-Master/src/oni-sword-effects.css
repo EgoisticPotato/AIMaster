@@ -1,0 +1,52 @@
+/* oni-sword-effects.css */
+
+.oni-background {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1f1f1f, #0d0d0d);
+}
+
+/* Background sword slash animations */
+.oni-sword-layer::before,
+.oni-sword-layer::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(132, 37, 159, 0.333) 25px,
+    transparent 30px
+  );
+  animation: slashMove 6s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.oni-sword-layer::after {
+  animation-direction: reverse;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    rgba(147, 57, 207, 0.05) 25px,
+    transparent 30px
+  );
+}
+
+@keyframes slashMove {
+  from {
+    transform: translateX(-20%) translateY(-20%) rotate(0deg);
+  }
+  to {
+    transform: translateX(20%) translateY(20%) rotate(360deg);
+  }
+}
+
+/* Optional shimmer or glow on hover */
+.flashcard:hover {
+  box-shadow: 0 0 20px rgba(113, 11, 113, 0.3);
+  transition: box-shadow 0.3s ease;
+}
