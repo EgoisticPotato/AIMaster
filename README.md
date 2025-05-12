@@ -134,8 +134,4 @@ MIT License
 ## 🙏 Credits
 
 * [OpenRouter](https://openrouter.ai)
-* [Mistral](https://mistral.ai)
 * [Tailwind CSS](https://tailwindcss.com)
-
-```
----
