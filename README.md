@@ -1,6 +1,3 @@
----
-
-````markdown
 # AI-Master Assistant 🧠📄
 
 AI-Master Assistant is a smart AI-powered study and document assistant. It allows users to upload documents, generate flashcards, and chat with document content using advanced language models via OpenRouter and Mistral APIs.
