@@ -22,7 +22,7 @@ function App() {
     formData.append('document', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/documents/upload', formData, {
+      const response = await axios.post('https://ai-master-backend.onrender.com//api/documents/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setProcessingResult(response.data.document);
@@ -36,7 +36,7 @@ function App() {
 
   const fetchDocuments = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/documents');
+      const response = await axios.get('https://ai-master-backend.onrender.com//api/documents');
       setDocuments(response.data);
     } catch (error) {
       console.error('Failed to fetch documents', error);
@@ -45,7 +45,7 @@ function App() {
 
   const handleChatWithDocument = async (documentPath) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/chat', {
+      const response = await axios.post('https://ai-master-backend.onrender.com//api/chat', {
         query: chatQuery,
         documentPath: documentPath,
       });
@@ -58,7 +58,7 @@ function App() {
 
   const handleDeleteDocument = async (filename) => {
     try {
-      await axios.delete(`http://localhost:5000/api/documents/${filename}`);
+      await axios.delete(`https://ai-master-backend.onrender.com//api/documents/${filename}`);
       fetchDocuments();
     } catch (error) {
       console.error('Delete failed', error);
@@ -67,7 +67,7 @@ function App() {
 
   const handleGenerateFlashcards = async (documentPath) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/flashcards', {
+      const response = await axios.post('https://ai-master-backend.onrender.com//api/flashcards', {
         documentPath: documentPath,
       });
       setFlashcards(response.data.flashcards);
